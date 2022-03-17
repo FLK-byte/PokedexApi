@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Pokemons {
+  Name            String? @db.Text
+  Pokedex_Number  Int     @id @unique(map: "Pokedex Number") @map("Pokedex Number")
+  Img_name        Int?    @map("Img name")
+  Generation      Int?
+  Evolution_Stage Int?    @map("Evolution Stage")
+  Evolved         Int?
+  FamilyID        Int?
+  Cross_Gen       Int?    @map("Cross Gen")
+  Type_1          String? @map("Type 1") @db.Text
+  Type_2          String? @map("Type 2") @db.Text
+  Weather_1       String? @map("Weather 1") @db.Text
+  Weather_2       String? @map("Weather 2") @db.Text
+  STAT_TOTAL      Int?    @map("STAT TOTAL")
+  ATK             Int?
+  DEF             Int?
+  STA             Int?
+  Legendary       Int?
+  Aquireable      Int?
+  Spawns          Int?
+  Regional        Int?
+  Raidable        Int?
+  Hatchable       Int?
+  Shiny           Int?
+  Nest            Int?
+  New             Int?
+  Not_Gettable    Int?    @map("Not-Gettable")
+  Future_Evolve   Int?    @map("Future Evolve")
+  CP___40         Int?    @map("100% CP @ 40")
+  CP___39         Int?    @map("100% CP @ 39")
+}
