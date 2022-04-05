@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { BuscarPokemonsService } from './app.service';
+import { appService } from './app.service';
 
-@Controller('pokemons')
-export class BuscarPokemonsController {
-  constructor(private readonly BPService: BuscarPokemonsService) {}
+@Controller()
+export class appController {
+  constructor(private readonly appService: appService) {}
 
   @Get()
   getHello() {
-    return this.BPService.getHello();
+    return this.appService.getHello();
   }
 }
